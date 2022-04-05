@@ -1,8 +1,8 @@
 let canAfford = (itemPrice, accountBalance) => {
     // test condition must be returned if not using if statements
     return itemPrice > accountBalance // test condition
-    ? `Cannot afford! You are $${itemPrice - accountBalance} short` // false condition
-    : "Can afford"; // true condition
+        ? `Cannot afford! You are $${itemPrice - accountBalance} short` // false condition
+        : "Can afford"; // true condition
 };
 
 let myBankAccountBalance = 1000;
