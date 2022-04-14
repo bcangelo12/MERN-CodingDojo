@@ -153,7 +153,11 @@ const UserForm = (props) => {
                     <p>{confirmPasswordError}</p>
                 )}
             </div>
-            <input type="submit" value="Create User" />
+            {confirmPasswordError ? (
+                <input type="submit" value="Create User" disabled />
+            ) : (
+                <input type="submit" value="Create User" />
+            )}
         </form>
     );
 };
