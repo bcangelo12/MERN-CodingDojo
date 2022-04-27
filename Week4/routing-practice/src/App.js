@@ -3,6 +3,7 @@ import "./App.css";
 import { Routes, Route, Link, useParams } from "react-router-dom";
 import Home from "./components/Home";
 import Param from "./components/Param";
+import NotFound from "./components/NotFound";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/:word" element={<Param />} />
                 <Route path="/:word/:color/:bg" element={<Param />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </div>
     );
