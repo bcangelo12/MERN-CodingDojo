@@ -1,12 +1,11 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import ProjectForm from "./components/ProjectForm";
+import ProductForm from "./components/ProductForm";
 
 function App() {
-    const [project, setProject] = useState([]);
     return (
         <div className="App">
-            <ProjectForm project={project} setProject={setProject} />
+            <ProductForm path="/" />
         </div>
     );
 }

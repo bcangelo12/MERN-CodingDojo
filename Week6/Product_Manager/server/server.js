@@ -14,8 +14,8 @@ app.use(
     })
 );
 
-const ProjectRoutes = require("./routes/project.routes");
-ProjectRoutes(app);
+const ProductRoutes = require("./routes/product.routes");
+ProductRoutes(app);
 
 app.listen(PORT, () => {
     console.log(`Server up on ${PORT}`);

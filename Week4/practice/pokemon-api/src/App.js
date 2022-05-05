@@ -7,8 +7,8 @@ function App() {
     const [pokemon, setPokemon] = useState([]);
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon?limit=807")
-            .then((reponse) => reponse.json())
-            .then((reponse) => setPokemon(reponse.results))
+            .then((response) => response.json())
+            .then((response) => setPokemon(response.results))
             .catch((err) => console.log(err));
     }, []);
 
