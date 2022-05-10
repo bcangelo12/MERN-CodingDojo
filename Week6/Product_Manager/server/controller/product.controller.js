@@ -1,7 +1,7 @@
 const Product = require("../model/product.model");
 
 module.exports.getAllProducts = (req, res) => {
-    Product.find()
+    Product.find({})
         .then((allProducts) => res.json(allProducts))
         .catch((err) =>
             res.status(400).json({
@@ -34,7 +34,7 @@ module.exports.createProduct = (req, res) => {
 };
 
 module.exports.updateProduct = (req, res) => {
-    Product.updateOne({ _id: req.params._id }, req.body, {
+    Product.findByIdAndUpdate({ _id: req.params._id }, req.body, {
         new: true,
         runValidators: true,
     })
