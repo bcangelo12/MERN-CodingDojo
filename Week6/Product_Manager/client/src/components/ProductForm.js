@@ -6,7 +6,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const ProductForm = () => {
+const ProductForm = (props) => {
+    const { products, setProducts } = props;
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
@@ -25,6 +26,7 @@ const ProductForm = () => {
                 setTitle("");
                 setPrice("");
                 setDescription("");
+                setProducts([...products, res.data]);
             })
             .catch((err) => console.log(err));
     };
