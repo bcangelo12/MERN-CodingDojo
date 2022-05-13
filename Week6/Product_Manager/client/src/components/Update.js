@@ -13,6 +13,7 @@ const Update = (props) => {
     const [title, setTitle] = useState();
     const [price, setPrice] = useState();
     const [description, setDescription] = useState();
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -48,6 +49,7 @@ const Update = (props) => {
                     "Something went wrong when updating product info",
                     err
                 );
+                setErrors(err.response.data.error.errors);
             });
     };
 
@@ -67,6 +69,9 @@ const Update = (props) => {
                             onChange={(e) => setTitle(e.target.value)}
                         />
                     </Col>
+                    {errors.title && (
+                        <p className="text-danger">{errors.title.message}</p>
+                    )}
                 </Form.Group>
                 <Form.Group as={Row} className="my-3" controlId="price">
                     <Form.Label column sm={2}>
@@ -80,6 +85,9 @@ const Update = (props) => {
                             onChange={(e) => setPrice(e.target.value)}
                         />
                     </Col>
+                    {errors.price && (
+                        <p className="text-danger">{errors.price.message}</p>
+                    )}
                 </Form.Group>
                 <Form.Group as={Row} className="my-3" controlId="description">
                     <Form.Label column sm={2}>
@@ -93,6 +101,11 @@ const Update = (props) => {
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </Col>
+                    {errors.description && (
+                        <p className="text-danger">
+                            {errors.description.message}
+                        </p>
+                    )}
                 </Form.Group>
                 <Button className="my-2" variant="info" type="submit">
                     Update Product
