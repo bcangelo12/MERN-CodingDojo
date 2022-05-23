@@ -16,6 +16,7 @@ class Ninja {
     }
     drinkSake() {
         this.health += 10;
+        console.log("You sit for a nice drink.");
     }
 }
 
@@ -36,3 +37,8 @@ class Sensei extends Ninja {
 const superSensei = new Sensei("Wei Lin");
 superSensei.speakWisdom();
 superSensei.showStats();
+
+const newNinja = new Ninja("Chuck", 150);
+newNinja.showStats();
+newNinja.drinkSake();
+newNinja.showStats();
