@@ -30,7 +30,7 @@ class Sensei extends Ninja {
 
     speakWisdom() {
         super.drinkSake();
-        console.log("Without a porkbun in your hand, you aren't a real man.");
+        console.log("Without a pork bun in your hand, you aren't a real man.");
     }
 }
 
